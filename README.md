@@ -1,10 +1,10 @@
 # Midterm
 Comp20 Midterm group project. 
 
+Spring 2021, Tufts University
+
 (Fictitious) Business Website
 Incorporate HTML/CSS/JS/JQuery
-
-Spring 2021
 
 Group Name: CABS
 

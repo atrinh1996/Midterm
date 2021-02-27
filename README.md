@@ -11,6 +11,6 @@ Group Name: CABS
 Creators:
 - Sanjana Puri
 - Amy Bui
-- Bob Ranali
+- Bob Ranalli
 - Camille Andersen
 

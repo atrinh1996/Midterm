@@ -1,0 +1,39 @@
+/* Shop page styling
+ * Author: Amy
+ * Spring 2021
+ */
+ 
+.cert-block, .custom, .elem{margin: auto; padding: 10px;}
+.cert-block{border-bottom: 2px #000000 dotted;}
+
+.cert-block{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cert-block img{
+    border-radius: 25px;
+    width: 300px; 
+    height: 150px;
+}
+
+#center-prod{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+input[name='cart']{border: none;background-color: inherit;}
+input[name='cart']:focus{outline: none;}
+
+
+
+/******** Border Lines for div contianers *************/
+/* .container{border: 1px solid black;}
+.cert-block{border: 1px solid green;}
+input{border: 1px solid blue;}
+.custom{border: 1px solid hotpink;}
+.elem{border: 1px solid red;}
+#center-prod{border: 1px solid purple;} */
+/******************************************************/

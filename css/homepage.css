@@ -1,0 +1,27 @@
+/* Homepage styling
+ * Author: Amy
+ * Spring 2021
+ */
+
+.block, .elem{display:flex;flex-direction: column;}
+.block, .elem, h1, #ticket-btn{margin:auto;}
+.block{padding-bottom: 25px;}
+h1{font-size:40px; font-weight: 800;}
+span{font-style: italic;font-weight: normal;}
+#slide{z-index: -1;}
+#ticket-btn a{text-decoration: none;}
+#ticket-btn a:hover{opacity: 0.5;}
+#ticket-btn{
+    background-color: #ffe079;
+    padding: 10px;
+    border-radius: 25px;
+    border: 4px solid #ebdcab;
+}
+
+
+
+/******** Border Lines for div contianers *************/
+/* .container{border: 1px solid black;}
+.block{border: 1px solid green;}
+.elem{border: 1px solid blue;} */
+/******************************************************/

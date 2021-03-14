@@ -1,16 +1,36 @@
-<!-- Template html file for Midterm -- Comp20 -->
+<!-- HOMEPAGE html file for Midterm -- Comp20 -->
+<!-- Edited by: Amy -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>PAGE_NAME_HERE</title>
-
-    <!-- Always have this -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/homepage.css">
 
-    <!-- Include page specific CSS / style tag here -->
+    <title>Home</title>
+
+    <script language="javascript">
+        movies = ["bitofheaven.jpg", "adrift.jpg","blood.jpg", "lovesong.jpg", "thewalk.jpg"];
+        var movieIndex = 0;
+
+        $(document).ready(function() {
+            slideShow();
+        });
+
+        // immediately start slide show of movies playing
+        function slideShow() {
+            $("#slide img").delay(5000).fadeOut(3000, nextSlide);
+        }
+
+        // gets next movie poster for slide show
+        function nextSlide() {
+            movieIndex = (movieIndex + 1) % movies.length;
+            $("#slide img").attr("src", "images/movie_posters/" + movies[movieIndex]);
+            $("#slide img").fadeIn(3000, slideShow);
+        }
+    </script>
 
 </head>
 
@@ -20,11 +40,11 @@
         <div class="container">
             <!-- Use unordered list for nav bars -->
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">Menu</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Item 5</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="#">Item 6</a></li>
                 <li><a href="#">Item 7</a></li>
             </ul>
@@ -41,10 +61,43 @@
 
 
     <!-- PAGE SPECIFIC CONTENT HERE -->
+
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolores autem, ea nobis porro, libero, temporibus et hic dignissimos suscipit nesciunt quasi alias. Possimus iusto consequuntur aliquid quos autem? Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae sint maxime consequatur ea autem commodi ipsam provident nobis perspiciatis nesciunt sequi magnam, aliquid corrupti ex culpa id officiis consequuntur ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptate quasi reprehenderit facilis quisquam eum sit labore voluptas! Perferendis, sunt. Tenetur dolores, vitae ab natus consequatur exercitationem in aliquam culpa.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga asperiores facilis impedit amet, veritatis quaerat possimus eligendi laboriosam quam sit. Praesentium dolor aliquid dolores fugiat, ea perferendis. Eligendi, mollitia! Nulla? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse soluta saepe repellendus modi? Ipsa exercitationem veritatis iste temporibus! Nihil, fuga rerum. Iure eum eos quod vitae quidem laboriosam cupiditate magnam! </p>
-    </div><!-- end ./container -->
+        <div class="block">
+            <h1>Now Playing</h1>
+        </div> <!-- End of block -->
+
+        <div class="block">
+            <div class='elem'>
+                <div id='slide'>
+                    <img src="images/movie_posters/bitofheaven.jpg" width="400px"/>
+                </div> <!-- End of slide -->
+            </div> <!-- End of elem -->
+
+            <div class="elem">
+                <div id="ticket-btn">
+                    <a href="#">Purchase Tickets Now</a>
+                </div> <!-- End of center-btn -->
+            </div> <!-- End of elem -->
+        </div> <!-- End of block -->
+
+        <div class="block">
+            <div class="elem">
+                <h2>About Us</h2>
+            </div> <!-- End of elem -->
+
+            <div class="elem">
+                <p>
+                    BUSINESS_NAME_HERE is a locally-owned, dine-in movie theater and the only cinema experience you'd ever need. Conveniently located at SOME_CONVENIENT_CROSSING, our theater offers comfortable, spacious, socially-distanced seating, friendly staffs, and delicious food while you enjoy the greatest <span>and</span> the latest movies out there, from Hollywood hits, to the beloved classics, and the new up-and-comers. <br><br>
+
+                    You can order before the show starts! A full three course meal not for you? No worries! Stop by our concessions stand and pick up a classic bucket of buttery popcorn and all your favorites! And if you’re in the mood for dessert, an extra drink, or some good old-fashioned kettle corn halfway through the movie, no problem! Our rooms will have friendly wait staff there to assist your table. BUSINESS_NAME_HERE was designed for you to sit back, relax and enjoy the show! <br><br>
+                    
+                    Established in 1984, we started with just three 50-seated screening rooms. Today, we are are proud to house twenty screening and dining halls. In addition to our screening halls, we offer a fully stocked bar and reservations for private screenings. We <span>aren't</span> your average movie theater.
+                </p>
+            </div> <!-- End of elem -->
+        </div> <!-- End of block -->
+    </div> <!-- End container -->
+
 
 
 
@@ -52,6 +105,8 @@
     <!-- Helps when we are scroll and just want to look at the page -->
     <div style="margin-top: 150px;"></div>
     
+
+
     <!-- Page Footer: Copyright and Social media links -->
     <!-- Social Links Currently Go NOWHERE -->
     <footer id="main-footer">
@@ -63,21 +118,19 @@
                     <li>City, State, Zip</li>
                     <li>Phone</li>
                 </ul>
-            </div>
-        </div>
+            </div> <!-- End of foot-address -->
+        </div> <!-- End of foot-block -->
 
         <div class="foot-block">
-        <p>Copyright &copy; 2021 BUSINESS_NAME_HERE</p>
-        <!-- <div class="container"> -->
+            <p>Copyright &copy; 2021 BUSINESS_NAME_HERE</p>
             <ul id="foot-social">
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-clemson-paw-png-703430.png" alt="Instagram"></li></a>
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-clemson-paw-png-703430.png" alt="Instagram"></a></li>
 
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-facebook-circle-png-503771.png" alt="Facebook"></li></a>
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-facebook-circle-png-503771.png" alt="Facebook"></a></li>
 
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-twitter-logo-png-transparent-111779.png" alt="Twitter"></li></a>
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-twitter-logo-png-transparent-111779.png" alt="Twitter"></a></li>
             </ul>
-        <!-- </div> end of ./container -->
-        </div>
+        </div> <!-- End of foot-block -->
 
         <!-- Right side: Hours of operation -->
         <div class="foot-block">
@@ -92,9 +145,8 @@
                     <li>Saturday: 7 - 7</li>
                     <li>Sunday: 7 - 7</li>
                 </ul>
-            </div>
-        </div>
-
+            </div> <!-- End of foot-hours -->
+        </div> <!-- End of foot-block -->
     </footer> <!-- #main-footer -->
 </body>
 </html>

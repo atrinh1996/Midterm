@@ -1,0 +1,169 @@
+<!-- SHOP html file for Midterm -- Comp20 -->
+<!-- Edited by: Amy -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/shop.css">
+
+    <title>Shop</title>
+
+    <!-- Include page specific CSS / style tag here -->
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="container">
+            <!-- Use unordered list for nav bars -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">Item 6</a></li>
+                <li><a href="#">Item 7</a></li>
+            </ul>
+        </div> <!-- ./container -->
+    </nav> <!-- #navbar -->
+
+    <!-- Showcase Section -->
+    <section id="showcase">
+        <div class="container">
+            <h1>BUSINESS_NAME_HERE</h1>
+        </div> <!-- end ./container -->
+    </section> <!-- #showcase -->
+
+
+    <script language>
+        numOfDesigns = 8;
+        giftCardVal = [5, 10, 15, 50, 100];
+
+        function makeSelect(name, maxRange){
+            var s = "";
+            s = "<select name='" + name + "' size='1'>";
+            for (let i = 0; i <= maxRange; i++)
+                s += "<option>" + i + "</option>";
+            s += "</select>";
+            return s;
+        }
+
+        function makeRadio(grp) {
+            var r = ""
+            for (let i = 0; i < giftCardVal.length; i++) {
+                if (i == 0)
+                    r += "<input type='radio' name='cost" + grp + "' value='$" + giftCardVal[i] + "' checked='checked'>$" + giftCardVal[i];
+                else 
+                    r += "<input type='radio' name='cost" + grp + "' value='$" + giftCardVal[i] + "'>$" + giftCardVal[i];
+            }
+            return r;
+        }
+    </script>
+
+    <!-- PAGE SPECIFIC CONTENT HERE -->
+    <div class="container">
+        <form>
+            <h1>Select Gift Certificate(s) Designs</h1>
+
+            In You Cart: <input type='text' name='cart' id='cart' value=0>
+
+            <!-- REMOVE NOTES FOR SUBMISSION -->
+            <!-- EXAMPLE OF HOW EACH GIFT CARD DISPLAYS -->
+            <!-- <div class='cert-block'>
+                <div class='custom'>
+                    <img src='images/design/design1.jpg' alt='Gift Certificate Img'>
+                </div>
+                <div class='custom'>
+                    <div class='elem'>
+                        Qty. <select name='design1' size='1'>
+                            <option>0</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+                    <div class='elem'>
+                        Select Value: <input type='radio' name='cost1' value='$5' checked='checked'>$5
+                        <input type='radio' name='cost1' value='$10'>$10
+                        <input type='radio' name='cost1' value='$15'>$15
+                        <input type='radio' name='cost1' value='$50'>$50
+                        <input type='radio' name='cost1' value='$100'>$100
+                    </div>
+                    <div class='elem'>
+                        <input type='button' name='addCart' value='Add to Cart'>
+                    </div>
+                </div>
+            </div> -->
+
+            <div id="center-prod">
+            <script language='javascript'>
+                // Display available gift card designs
+                var cards = "";
+                for (let i = 1; i <= numOfDesigns; i++) {
+                    cards += "<div class='cert-block'>";
+                    cards += "<div class='custom'><img src='images/design/design" + i + ".jpg' alt='Gift Certificate Img'></div><div class='custom'><div class='elem'> Qty. ";
+                    cards += makeSelect("design" + i, 10);
+                    cards += "</div><div class='elem'>Select Value:";
+                    cards += makeRadio(i);
+                    cards += "</div><div class='elem'><input type='button' name='addCart' value='Add to Cart'></div></div></div>";
+                }
+                document.writeln(cards);
+            </script>
+            </div>
+
+        </form> <!-- End of shopping form -->
+    </div><!-- end ./container -->
+
+
+
+    <!-- Extra space; may remove after content is added -->
+    <!-- Helps when we are scroll and just want to look at the page -->
+    <div style="margin-top: 150px;"></div>
+    
+    <!-- Page Footer: Copyright and Social media links -->
+    <!-- Social Links Currently Go NOWHERE -->
+    <footer id="main-footer">
+        <!-- Left side: address -->
+        <div class="foot-block">
+            <div id="foot-address">
+                <ul>
+                    <li>Street Address</li>
+                    <li>City, State, Zip</li>
+                    <li>Phone</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="foot-block">
+            <p>Copyright &copy; 2021 BUSINESS_NAME_HERE</p>
+            <ul id="foot-social">
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-clemson-paw-png-703430.png" alt="Instagram"></a></li>
+
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-facebook-circle-png-503771.png" alt="Facebook"></a></li>
+
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-twitter-logo-png-transparent-111779.png" alt="Twitter"></a></li>
+            </ul>
+        </div>
+
+        <!-- Right side: Hours of operation -->
+        <div class="foot-block">
+            <div id="foot-hours">
+                <h4>Hours:</h4>
+                <ul>
+                    <li>Monday: 7 - 7</li>
+                    <li>Tuesday: 7 - 7</li>
+                    <li>Wednesday: 7 - 7</li>
+                    <li>Thursday: 7 - 7</li>
+                    <li>Friday: 7 - 7</li>
+                    <li>Saturday: 7 - 7</li>
+                    <li>Sunday: 7 - 7</li>
+                </ul>
+            </div>
+        </div>
+
+    </footer> <!-- #main-footer -->
+</body>
+</html>

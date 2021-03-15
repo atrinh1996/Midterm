@@ -1,0 +1,377 @@
+<!-- Template html file for Midterm -- Comp20 -->
+<!--getting Ints-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mystery Château | Book Tickets</title>
+
+    <!-- Always have this -->
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script language = "javascript">
+        function TicketType(name, cost) //declare ticket type and prices 
+        {
+            this.name =name;
+            this.cost=cost;
+        } 
+
+        ticketTypes = new Array(
+            new TicketType("Adult", 15.0),
+            new TicketType("Child (12 Under)", 7.0),
+            new TicketType("Senior", 10.0),
+        );
+
+        function makeSelect(name, minRange, maxRange)
+        {
+            var t= "";
+            t = "<select class='mquant' name='" + name + "' size='1'>";
+            for (j=minRange; j<=maxRange; j++)
+                t += "<option>" + j + "</option>";
+            t+= "</select>"; 
+            return t;
+        }
+
+        function getTime(){
+            if(document.getElementById("Shadow").selected == true){ 
+                document.getElementById("early").innerHTML = "3:15 PM";//display correct times 
+                document.getElementById("late").innerHTML = "6:00 PM";
+            } else if (document.getElementById("LA").selected == true){
+                 document.getElementById("early").innerHTML = "9:00 AM";//display correct times 
+                 document.getElementById("late").innerHTML == "12:00 PM";
+            } else if (document.getElementById("Falcon").selected == true){
+                 document.getElementById("early").innerHTML = "1:00 PM";//display correct times 
+                 document.getElementById("late").innerHTML = "4:00 PM";
+            } else if (document.getElementById("Drive").selected == true){
+                 document.getElementById("early").innerHTML = "10:00 AM";//display correct times 
+                 document.getElementById("late").innerHTML = "2:00 PM";
+            } else if (document.getElementById("Shanghai").selected == true){
+                 document.getElementById("early").innerHTML = "7:00 AM";//display correct times 
+                 document.getElementById("late").innerHTML = "5:00 PM";
+            } 
+        }
+
+        $(document).ready(function(){
+            $(".mquant").change(function(){
+                var qty = 2; 
+                qty2 = parseFloat(qty); 
+                qty2 = qty - 2.0; //to get the value as a float
+        
+                var wtax = 2;
+                wtax2 = parseFloat(wtax); //to get the value as a float, must be more efficient way, 
+                wtax2 = wtax - 2.0;  //(cont.) can't figure it out 
+
+                var total = 2;
+                total2 = parseFloat(total); //to get the value as a float 
+                total2 = total - 2.0; 
+
+                var stotal = 2;
+                stotal2 = parseFloat(stotal); //to get the value as a float 
+                stotal2 = stotal - 2.0;   
+                iter = 0;
+
+                $(".mquant option:checked").each(function(){
+                        amt = $(this).val(); 
+                        stotal = amt*ticketTypes[iter].cost; //item price (quant * price)
+                        stotal2 += stotal; //iterates through 0 values 
+
+                        wtax = (stotal*.0625); //getting the tax
+                        wtax2 += wtax; 
+            
+                        qty2 += parseFloat(stotal); //getting the subtotal 
+                        total = wtax2 + parseFloat(stotal2) + parseFloat(1.00); //getting the total 
+
+                        stotal = stotal.toFixed(2); 
+                        qty3 = qty2.toFixed(2); 
+                        wtax3 = wtax2.toFixed(2);
+                        total2 = total.toFixed(2);  
+
+                        sID = "#" + iter + "myTotal"; //creating the id 
+                        $(sID).val(stotal); //changing value of total cost per item checkboxes 
+
+                        //inputting dynamic text box values (subtotal, tax, total)
+                        $("#subtotal").val(qty3); //changing the value of the subtotal text box 
+                        $("#tax").val(wtax3); //changing the value of the subtotal text box
+                        $("#total").val(total2); //changing the value of the subtotal text box 
+
+                        iter++; //to get the next value in the cost box 
+                    });
+            });
+        });  
+
+        window.onload = function() {
+            //find the movie name 
+            var timemovie = localStorage.getItem("textvalue");
+            var movie = ".";
+            var time = ".";  
+            for (i = 5; i < timemovie.length; i++){ //get the movie name 
+                movie += timemovie[i]; 
+            }
+            for (i = 0; i < 5; i++){ //get time 
+                time += timemovie[i]; 
+            }
+
+            if(movie == ".doubt"){ 
+                document.getElementById("Shadow").selected = true; //select the correct movie
+                document.getElementById("early").innerHTML = "3:15 PM";//display correct times 
+                document.getElementById("late").innerHTML = "6:00 PM";
+                if(time == ".early"){ //select correct time 
+                    document.getElementById("early").selected = true;
+                } else if (time == ".later"){
+                    document.getElementById("late").selected = true;
+                }
+            } else if (movie == ".la"){
+                 document.getElementById("LA").selected = true;
+                 document.getElementById("early").innerHTML = "9:00 AM";//display correct times 
+                 document.getElementById("late").innerHTML = "12:00 PM";
+                 if(time == ".early"){ //select correct time 
+                    document.getElementById("early").selected = true;
+                } else if (time == ".later"){
+                    document.getElementById("late").selected = true;
+                }
+            } else if (movie == ".falcon"){
+                 document.getElementById("Falcon").selected = true;
+                 document.getElementById("early").innerHTML = "1:00 PM";//display correct times 
+                 document.getElementById("late").innerHTML = "4:00 PM";
+                 if(time == ".early"){ //select correct time 
+                    document.getElementById("early").selected = true;
+                } else if (time == ".later"){
+                    document.getElementById("late").selected = true;
+                }
+            } else if (movie == ".drive"){
+                 document.getElementById("Drive").selected = true;
+                 document.getElementById("early").innerHTML = "10:00 AM";//display correct times 
+                 document.getElementById("late").innerHTML = "2:00 PM";
+                 if(time == ".early"){ //select correct time 
+                    document.getElementById("early").selected = true;
+                } else if (time == ".later"){
+                    document.getElementById("late").selected = true;
+                }
+            } else if (movie == ".shanghai"){
+                 document.getElementById("Shanghai").selected = true;
+                 document.getElementById("early").innerHTML = "7:00 AM";//display correct times 
+                 document.getElementById("late").innerHTML = "5:00 PM";
+                 if(time == ".early"){ //select correct time 
+                    document.getElementById("early").selected = true;
+                } else if (time == ".later"){
+                    document.getElementById("late").selected = true;
+                }
+            } 
+        }
+
+        function toSubmit(){
+            /*Generate Error Messages*/
+            var err = 0; 
+            etotal = $("#total").val(); 
+            ename = $("#name").val(); 
+            if(etotal.length == 0){ //check that something was ordered 
+                $("#errOrder").css("display", "block");
+                err++; 
+            }
+
+            if(ename.length == 0){ //check that something was ordered 
+                $("#errName").css("display", "block");
+                err++; 
+            }
+
+            if(err == 0){
+                /*Prepare for New Window*/
+                var quant = []; //array to hold ticket quantities 
+                var quantities = " "; 
+                for(i = 0; i < 3; i++){
+                    var nameof = "quan" + i;  //get the actual name 
+                    var value = $("select[name=" + nameof + "] option:checked").val();
+                    quant.push(value);  
+                }
+                for(i = 0; i<3; i++){
+                    quantities += quant[i] + " "; //convert into string so it can be sent 
+                } 
+
+                quantities2 = String(quantities); 
+                localStorage.setItem("quantity", quantities2); //send quantities
+                sendtotal = $("#total").val();
+                localStorage.setItem("total", sendtotal); //send total
+
+                var items = ","; 
+                for(i=0; i<3; i++){
+                    items += ticketTypes[i].name + ","; 
+                }
+
+                items2 = String(items); 
+                localStorage.setItem("items", items2); //send ticket types 
+
+                var customer = $("#name").val(); //send name 
+                localStorage.setItem("customer", customer); 
+
+                var time = $("#times option:selected").val(); //send time
+                localStorage.setItem("time1", time); 
+
+                var cmovie = $("#movies option:selected").val(); //send time
+                localStorage.setItem("movie1", cmovie); 
+ 
+                window.open("stub.html");
+
+            }
+        }
+
+    </script>
+
+    <!-- Include page specific CSS / style tag here -->
+
+</head>
+<style>
+    .errMsg {
+        color: #D20E11; 
+        border:solid 1px #d20e11; 
+        width: 300px;
+        height: 20px;
+        font-family:'Courier New', Courier, monospace;
+    }
+</style>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="container">
+            <!-- Use unordered list for nav bars -->
+            <ul>
+               <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="movies.html">Movies</a></li> 
+                <li><a href="tickets.html"><strong>Tickets</strong></a></li> <!--nested?-->
+                <li><a href="#">Room Rental</a></li>
+                <li><a href="#">COVID Safety</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
+        </div> <!-- ./container -->
+    </nav> <!-- #navbar -->
+
+    <!-- Showcase Section -->
+    <section id="showcase">
+        <div class="container">
+            <a href="https://www.google.com"><img class="logo" src="MysteryLogo.png" width= "200" height= "200" align="center"></a>
+            <h1>Tickets</h1>
+        </div> <!-- end ./container -->
+    </section> <!-- #showcase -->
+
+
+
+    <!-- PAGE SPECIFIC CONTENT HERE -->
+    <div class="container">
+        <h2>Book Tickets</h2>
+        <form>
+            <p>
+                <label for="name">Name:</label>
+                <input type= "text" id="name" name= "fullname" placeholder= "First Last">
+                    <div id="errName" class="errMsg" style="display:none">Please enter a name</div>
+
+            </p>
+            <p>
+                <label for="name">Movies:</label> 
+                <select name="movie" id="movies" onchange="getTime()">
+                    <option id="Shadow" value="Shadow of a Doubt">Shadow of A Doubt</option>
+                    <option id= "LA" value="L.A. Confidential">L.A. Confidential</option>
+                    <option id="Falcon" value="The Maltese Falcon">The Matlese Falcon</option>
+                    <option id="Drive" value= "Mulholland Drive">Mulholland Drive</option>
+                    <option id="Shanghai" value="The Shanghai Lady">The Shanghai Lady</option>
+                </select>
+            </p>
+            <p>
+                <label for= "movie">Time:</label>
+                <select name="movie" id="times">
+                    <option id="early"></option>
+                    <option id="late"></option>
+                </select>
+            </p>
+            <table border="0" cellpadding="3">
+                <tr>
+                    <th>Quantity</th>
+                    <th>Ticket Type</th>
+                    <th>Cost</th>
+                    <th>Subtotal</th>
+                </tr>
+                <script language="javascript">
+
+                var s = "";
+                for (i=0; i< ticketTypes.length; i++)
+                {
+                    s += "<tr><td>";
+                    s += makeSelect("quan" + i, 0, 10);
+                    s += "</td><td>" + ticketTypes[i].name + "</td>";
+                    s += "<td> $" + ticketTypes[i].cost.toFixed(2) + "</td>";
+                    s += "<td>$<input type='text' id='"+i+"myTotal' name='cost'/></td></tr>"; //added an ID
+                }
+                document.writeln(s);
+
+            </script>
+            </table>
+            <p>Subtotal: 
+                $<input type="text"  name='subtotal' id="subtotal" />
+            </p>
+            <p>Mass tax 6.25%:
+                $<input type="text"  name='tax' id="tax" />
+            </p>
+            <p>Total + Booking Fee ($1.00): $<input type="text"  name='total' id="total" />
+            </p>
+
+            <div id="errOrder" class="errMsg" style="display:none">Please book at least one ticket</div><br/>
+            <input onclick = "toSubmit()" type = "button" value = "Get Ticket(s)" id="submit"/> 
+        </form>
+    </div><!-- end ./container -->
+
+    
+
+
+
+    <!-- Extra space; may remove after content is added -->
+    <!-- Helps when we are scroll and just want to look at the page -->
+    <div style="margin-top: 150px;"></div>
+    
+    <!-- Page Footer: Copyright and Social media links -->
+    <!-- Social Links Currently Go NOWHERE -->
+    <footer id="main-footer">
+        <!-- Left side: address -->
+        <div class="foot-block">
+            <div id="foot-address">
+                <ul>
+                    <li>Street Address</li>
+                    <li>City, State, Zip</li>
+                    <li>Phone</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="foot-block">
+        <p>Copyright &copy; 2021 The Mystery Château</p>
+        <!-- <div class="container"> -->
+            <ul id="foot-social">
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-clemson-paw-png-703430.png" alt="Instagram"></li></a>
+
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-facebook-circle-png-503771.png" alt="Facebook"></li></a>
+
+                <li><a href="#" target="_blank"><img src="images/pngkey.com-twitter-logo-png-transparent-111779.png" alt="Twitter"></li></a>
+            </ul>
+        <!-- </div> end of ./container -->
+        </div>
+
+        <!-- Right side: Hours of operation -->
+        <div class="foot-block">
+            <div id="foot-hours">
+                <h4>Hours:</h4>
+                <ul>
+                    <li>Monday: 7 - 7</li>
+                    <li>Tuesday: 7 - 7</li>
+                    <li>Wednesday: 7 - 7</li>
+                    <li>Thursday: 7 - 7</li>
+                    <li>Friday: 7 - 7</li>
+                    <li>Saturday: 7 - 7</li>
+                    <li>Sunday: 7 - 7</li>
+                </ul>
+            </div>
+        </div>
+
+    </footer> <!-- #main-footer -->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<title>TICKET</title>
+<link rel="stylesheet" type="text/css" href="css/stub.css">
+<script language="javascript">
+	window.onload = function(){
+
+		var quantity = localStorage.getItem("quantity"); //ticket quantities
+		var tItems = localStorage.getItem("items"); //types of tickets 
+		var cust = localStorage.getItem("customer"); //get name 
+		var time = localStorage.getItem("time1"); //get time 
+		var movie = localStorage.getItem("movie1"); //get movie
+		var total = localStorage.getItem("total"); //get total
+
+		total = "Total: $" + total;  
+		cust = "Enjoy your movie, " + cust + "!"; 
+
+		quantity = quantity.split(" ");
+		l = quantity.length - 1;  
+		for(i = 1; i < l; i++){
+			parseInt(quantity[i]); //split the string into a array of integers 
+		}
+		tItems = tItems.split(","); //split string into array of items 
+
+		document.getElementById("movietitle").innerHTML = movie; 
+		document.getElementById("timetitle").innerHTML = time; 
+		document.getElementById("total").innerHTML = total; 
+		document.getElementById("message").innerHTML = cust;  
+
+		for(i = 1; i < l; i++){
+			if(quantity[i] != 0){ 
+				qID = "quant" + i; 
+				mID = "item" + i; 
+				document.getElementById(qID).innerHTML = quantity[i]; //place the quantities of tickets 
+				document.getElementById(mID).innerHTML = tItems[i];
+			}
+		}
+	}
+
+</script>
+</head>
+
+<body>
+	<div class="boxed">
+		<h1 id="movietitle" align="center"></h1>
+		<h2 id="timetitle" align="center"></h2>
+		<table align="center">
+			<tr id="1">
+				<td id="quant1" style="font-size:25px; font-family:'Courier New'"><h3></h3></td>
+				<td id="item1" style="font-size:25px; font-family:'Courier New'"><h3></h3></td>
+			</tr>
+			<tr id="2">
+				<td id="quant2" style="font-size:25px; font-family:'Courier New'"><h3></h3></td>
+				<td id="item2" style="font-size:25px; font-family:'Courier New'"><h3></h3></td>
+			</tr>
+			<tr id="3">
+				<td id="quant3" style="font-size:25px; font-family:'Courier New'"><h3></h3></td>
+				<td id="item3" style="font-size:25px; font-family:'Courier New'"><h3></h3></td>
+			</tr>
+		</table>
+		<h4 id="total" align="center"></h4>
+		<h2 id="message" align="center"></h2>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+div.boxed{
+	border: 10px solid #800000;
+}
+
+h1{
+	font-family:'Courier New', Courier, monospace; /* ???New font??? */
+    font-size:40px;
+}
+
+h2{
+	font-family:'Courier New', Courier, monospace; /* ???New font??? */
+    font-size:30px;
+    background-color: #000000; 
+    color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+h3{
+	font-family:'Courier New', Courier, monospace; /* ???New font??? */
+    font-size:24px;
+}
+
+h4{
+	font-family:'Courier New', Courier, monospace; /* ???New font??? */
+    font-size:30px;
+}

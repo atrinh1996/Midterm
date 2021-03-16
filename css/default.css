@@ -158,6 +158,52 @@ a:hover{
     display:none;
 }
 
+/*CHANGED*/
+html. body{
+    width: 100%;
+    height: 100%;
+    margin: 0; 
+}
+
+label{
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+}
+
+#toggle{
+    display: none;
+}
+
+.menu{
+    padding-left: 40px; 
+}
+
+
+@media only screen and (max-width: 800px){
+    label{
+        display: block;
+        cursor: pointer;
+    }
+    .menu{
+        text-align: center;
+        width: 100%;
+        display: none;
+        padding-left: 0px; 
+    }
+    .menu a{
+        display: block;
+        border-bottom: 1px solid #EAEAEB;
+        margin: 0;
+        padding-left: 0px; 
+    }
+    #toggle:checked + .menu{
+        display: block;
+    }
+}
+/*END OF CHANGE*/
+
 
 
 /* For DESKTOP: when width is at least 960 px*/

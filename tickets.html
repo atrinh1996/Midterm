@@ -7,7 +7,7 @@
     <title>The Mystery Château | Book Tickets</title>
 
     <!-- Always have this -->
-    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/ticketstyles.css">
     <script language = "javascript">
         function TicketType(name, cost) //declare ticket type and prices 
         {
@@ -231,15 +231,15 @@
 <body>
      <!-- Navigation Bar -->
     <nav id="navbar">
-        <label style="padding-left:40px" for="toggle">&#9776;</label>
+        <div class="hamb" style="padding-left:40px" for="toggle">&#9776;</div>
         <input type="checkbox" id="toggle"/>
         <div class="menu">
             <!-- Use unordered list for nav bars -->
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Menu</a></li>
-                <li><a href="movies.html"><strong>Movies</strong></a></li> 
-                <li><a href="tickets.html">Tickets</a></li> <!--nested?-->
+                <li><a href="movies.html">Movies</a></li> 
+                <li><a href="tickets.html"><strong>Tickets</strong></a></li> <!--nested?-->
                 <li><a href="#">Room Rental</a></li>
                 <li><a href="#">COVID Safety</a></li>
                 <li><a href="#">Contact</a></li>
@@ -263,7 +263,7 @@
         <h2>Book Tickets</h2>
         <form>
             <p>
-                <label for="name">Name:</label>
+                <label class="mobile2" for="name">Name:</label>
                 <input type= "text" id="name" name= "fullname" placeholder= "First Last">
                     <div id="errName" class="errMsg" style="display:none">Please enter a name</div>
 
@@ -297,23 +297,24 @@
                 var s = "";
                 for (i=0; i< ticketTypes.length; i++)
                 {
-                    s += "<tr><td>";
+                    s += "<tr><td><div class='mobile3'>";
                     s += makeSelect("quan" + i, 0, 10);
-                    s += "</td><td>" + ticketTypes[i].name + "</td>";
-                    s += "<td> $" + ticketTypes[i].cost.toFixed(2) + "</td>";
-                    s += "<td>$<input type='text' id='"+i+"myTotal' name='cost'/></td></tr>"; //added an ID
+                    s += "</div></td><td><div class='mobile3'>" + ticketTypes[i].name + "</div></td>";
+                    s += "<td><div class='mobile3'> $" + ticketTypes[i].cost.toFixed(2) + "</div></td>";
+                    s += "<td><div class='mobile3'><input type='text' id='"+i+"myTotal' name='cost'/></div></td></tr>";
                 }
                 document.writeln(s);
 
             </script>
             </table>
-            <p>Subtotal: 
-                $<input type="text"  name='subtotal' id="subtotal" />
+            <p><div class="mobile">Subtotal: 
+                $<input class="mobile" type="text"  name='subtotal' id="subtotal" /></div>
             </p>
-            <p>Mass tax 6.25%:
-                $<input type="text"  name='tax' id="tax" />
+            <p><div class="mobile">Mass tax 6.25%:
+                $<input class="mobile" type="text"  name='tax' id="tax" /></div>
             </p>
-            <p>Total + Booking Fee ($1.00): $<input type="text"  name='total' id="total" />
+            <p><div class="mobile">
+                Total + Booking Fee ($1.00): $<input type="text"  name='total' id="total" /></div>
             </p>
 
             <div id="errOrder" class="errMsg" style="display:none">Please book at least one ticket</div><br/>

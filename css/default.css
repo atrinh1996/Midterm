@@ -165,7 +165,7 @@ html. body{
     margin: 0; 
 }
 
-label{
+.hamb{
     margin: 0 40px 0 0;
     font-size: 26px;
     line-height: 70px;
@@ -182,7 +182,7 @@ label{
 
 
 @media only screen and (max-width: 800px){
-    label{
+    .hamb{
         display: block;
         cursor: pointer;
     }

@@ -1,0 +1,238 @@
+/* CSS style sheet for Midterm - Comp20 */
+/* Default Styling for every page */
+
+/* Styling for Mobile: */
+body{
+    background-color:#fffef9;
+    color:#555555;
+    font-family:'Courier New', Courier, monospace; /* ???New font??? */
+    font-size:16px;
+    line-height:1.0;
+    margin:0;
+}
+
+/* Note: for now, anything in span tag is bold */
+span{
+    font-weight:bold;
+}
+
+a{
+    text-decoration: none;
+    color: #1f1f35;
+}
+
+a:visited{
+    color:#1f1f35;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+}
+
+/* Style for Navigation Bar ***********************************/
+#navbar{
+    position:fixed; 
+    width:100%;
+    top:0;
+    padding-top: 7px;
+    padding-bottom: 3.5px;
+    color:#ffffff;
+
+    /* background-color:#000000; */
+    background-color:#800000; /* remove ? */
+}
+
+#navbar ul{
+    list-style:none;
+    padding:0;
+}
+
+#navbar a{
+    text-decoration:none;
+    color:#ffffff;
+    font-weight: lighter;
+    margin:10px;
+}
+
+#navbar a:hover{
+    text-decoration:underline;
+}
+
+#navbar li{
+    display:inline;
+    padding-bottom: 2px;
+}
+
+/* Style for primary page image
+ * Currently just a block of color
+ * Comment the background-image back in when we have a picture
+ */
+ .logo{
+    padding-top: 120px;
+    padding-bottom: 0px;
+ }
+
+#showcase{
+    width:100%;
+
+    /* background-image: url("../images/patrick-tomasso-GXXYkSwndP4-unsplash.jpg"); */
+    background-color:#deb887;   /* REMOVE when we have image */
+
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    max-height:450px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+#showcase h1{
+    color:white;
+    font-size:30px;
+    /* font-family: ; ??? New font ???*/
+    font-weight: lighter;
+    line-height: 1.2;
+    margin-top: 50px; /*changed from 300px*/
+    background: rgba(00, 00, 00, 0.45);
+}
+
+/* Styling for main page title on page */
+#main h1{
+    box-sizing:border-box;
+    width: 100%;
+    font-size:30px;
+    font-weight: lighter;
+    color:#ffffff;
+    background: #000000;
+    text-align: center;
+}
+
+
+/* Styling for Page's footer */
+#main-footer{
+    /* background:#000000; */
+    background-color:#800000; /* remove ? */
+    color:#ffffff;
+    text-align:center;
+    margin-top: 50px;
+    padding-bottom:50px;
+    padding-top: 20px;
+    line-height:1.4;
+}
+
+/* Remove all the default ul style in footer in each item */
+#main-footer ul{
+    list-style:none;
+    padding:0;
+}
+
+/* Display footer item as just one block in mobile */
+.foot-block{
+    /* This will put a box around footer blocks. comment in to visualize where the box lie */
+    /* border:1px #000000 solid; */
+}
+
+/* Display only the social links inline with each other. */
+#foot-social li{
+    display:inline;
+}
+/* Style the social link icons */
+#foot-social li img{
+    width:30px;
+    height:30px;
+    margin-left:5px;
+    margin-right:5px;
+}
+#foot-social a:hover{
+    opacity: 0.5;
+}
+
+/* Fix styling for left and right content in footer. Hidden on mobile */
+#foot-address, #foot-hours{
+    display:none;
+}
+
+/*CHANGED*/
+html. body{
+    width: 100%;
+    height: 100%;
+    margin: 0; 
+}
+
+.hamb{
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+}
+
+#toggle{
+    display: none;
+}
+
+.menu{
+    padding-left: 40px; 
+}
+
+@media only screen and (max-width: 610px){
+    .mobile{
+        font-size: 12px;
+    }
+
+    .mobile3{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 565px){
+    .mobile{
+        font-size: 13px;
+    }
+
+    .mobile3{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .hamb{
+        display: block;
+        cursor: pointer;
+    }
+    .menu{
+        text-align: center;
+        width: 100%;
+        display: none;
+        padding-left: 0px; 
+    }
+    .menu a{
+        display: block;
+        border-bottom: 1px solid #EAEAEB;
+        margin: 0;
+        padding-left: 0px; 
+    }
+    #toggle:checked + .menu{
+        display: block;
+    }
+}
+/*END OF CHANGE*/
+
+
+
+/* For DESKTOP: when width is at least 960 px*/
+@media(min-width:960px){
+    #showcase h1{font-size:40px; line-height: 1.2;}
+    #main h1{width:30%; margin-left:37.5%; margin-right:37.5%;}
+    
+    /* Display footer items in 3 inline blocks dor Desktop */
+    #main-footer{display:flex; justify-content: center;}
+    .foot-block{width:30%; margin:auto;}
+    #foot-address, #foot-hours{display: contents;}
+    #foot-hours h4{text-align: center;}
+}

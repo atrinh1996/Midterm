@@ -165,7 +165,7 @@ html. body{
     margin: 0; 
 }
 
-.hamb{
+label[name=hamb]{
     margin: 0 40px 0 0;
     font-size: 26px;
     line-height: 70px;
@@ -201,7 +201,7 @@ html. body{
 }
 
 @media only screen and (max-width: 800px){
-    .hamb{
+    label[name=hamb]{
         display: block;
         cursor: pointer;
     }

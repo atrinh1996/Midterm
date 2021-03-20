@@ -1,0 +1,99 @@
+<!-- Cart html file for Midterm -- Comp20 -->
+<!-- Edited by: Amy -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script language="javascript" src="js/default.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/cart.css">
+    <script language="javascript" src="js/shop.js"></script>
+    <script language="javascript" src="js/cart.js"></script>
+
+    <title>Order</title>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <script>writeNav();</script>
+
+    <!-- Showcase Section -->
+    <script>writeShowcase("Review Order");</script>
+
+    <!-- PAGE SPECIFIC CONTENT HERE -->
+    <div class="container">
+        <!-- Change this? -->
+        <form action="orderconfirm.html" target="_blank" onsubmit="return validateOrder()"> <!-- Review Cart -->
+            <div id="cartView">
+            <h2>Review Your Cart</h2>
+            <p id="empty-msg" style="display: none;">Your cart is empty</p>
+            <table id="myCart">
+                <tr name="cartHead"> <!-- HEADER -->
+                    <th>Card Style</th>
+                    <th>Card Value</th>
+                    <th>Qty.</th>
+                    <th>Total Cost</th>
+                </tr>
+                <!-- Cart items append here: see cart.js -->
+            </table>
+            </div> <!-- End of Cart view-->
+
+            <div id="totalView">
+                <table id="myTotal">
+                    <tr>
+                        <td><p>Subtotal: $</p></td>
+                        <td>
+                            <input type="text" name="subtotal" id="subtotal" disabled='true'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Tax 6.25%: $</p></td>
+                        <td><input type="text" name="tax" id="tax" disabled='true'></td>
+                    </tr>
+                    <tr>
+                        <td><p>Total: $</p></td>
+                        <td><input type="text" name="total" id="total" disabled='true'></td>
+                    </tr>
+                    <tr>
+                        <td><p>First Name: </p></td>
+                        <td><input type="text" name="fname" id="fname" placeholder="First Name"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Last Name: </p></td>
+                        <td><input type="text" name="lname" id="lname" placeholder="Last Name"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Street Address: </p></td>
+                        <td><input type="text" name="street" id="street" placeholder="Street Address"></td>
+                    </tr>
+                    <tr>
+                        <td><p>City/Town: </p></td>
+                        <td><input type="text" name="town" id="town" placeholder="City/Town"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Phone: </p></td>
+                        <td><input type="text" name="phone" id="phone" placeholder="Phone Number"></td>
+                    </tr>
+                </table>
+
+                <div id="order-btn">
+                    <input type="submit" name="order" id="order" value="Place Order">
+                </div>
+                
+            </div> <!-- End of totalView -->
+        </form> <!-- End of Cart Review -->
+
+
+    </div><!-- end ./container -->
+
+
+    <!-- Page Footer: Copyright and Social media links -->
+    <!-- Social Links Currently Go NOWHERE -->
+    <script>writeFooter();</script>
+</body>
+</html>

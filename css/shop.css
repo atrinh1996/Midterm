@@ -5,6 +5,8 @@
  
 .cert-block, .custom, .elem{margin: auto; padding: 10px;}
 .cert-block{border-bottom: 2px #000000 dotted;}
+#page-head{display: flex;}
+h2{margin: auto;}
 
 .cert-block{
     display: inline-flex;
@@ -24,10 +26,28 @@
     margin: auto;
 }
 
-input[name='cart']{border: none;background-color: inherit;}
-input[name='cart']:focus{outline: none;}
+input[name='cart']{border: none; background-color: inherit; 
+                    cursor:default;}
+input[name='cart']:focus, input[name='checkout']:focus{outline: none; }
 
+input[name='checkout']{
+    font-size: 16px;
+    background-color: inherit;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 10px;
+    border-width: 3px;
 
+}
+
+#error-msg{
+    width: max-content;
+    color: #ff0000;
+    font-style: italic;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 25px;
+}
 
 /******** Border Lines for div contianers *************/
 /* .container{border: 1px solid black;}

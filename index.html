@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script language="javascript" src="js/default.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
 
-    <title>Home</title>
-
     <script language="javascript">
-        movies = ["bitofheaven.jpg", "adrift.jpg","blood.jpg", "lovesong.jpg", "thewalk.jpg"];
+        movies = ["poster1.jpg", "poster2.jpg","poster3.jpg", "poster4.jpg", "poster5.jpg"];
         var movieIndex = 0;
 
         $(document).ready(function() {
@@ -21,132 +21,140 @@
 
         // immediately start slide show of movies playing
         function slideShow() {
-            $("#slide img").delay(5000).fadeOut(3000, nextSlide);
+            $("#slide1 img").fadeIn(3000);
+            $("#slide1 img").delay(5000).fadeOut(3000, nextSlide);
         }
 
         // gets next movie poster for slide show
         function nextSlide() {
             movieIndex = (movieIndex + 1) % movies.length;
-            $("#slide img").attr("src", "images/movie_posters/" + movies[movieIndex]);
-            $("#slide img").fadeIn(3000, slideShow);
+            $("#slide1 img").attr("src", "images/movie_posters/" + movies[movieIndex]);
+            // $("#slide1 img").fadeIn(3000, slideShow);
+            slideShow();
         }
     </script>
+
+    <title>Home</title>
 
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav id="navbar">
-        <div class="container">
-            <!-- Use unordered list for nav bars -->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="#">Item 6</a></li>
-                <li><a href="#">Item 7</a></li>
-            </ul>
-        </div> <!-- ./container -->
-    </nav> <!-- #navbar -->
+    <script>writeNav();</script>
 
     <!-- Showcase Section -->
-    <section id="showcase">
-        <div class="container">
-            <h1>BUSINESS_NAME_HERE</h1>
-        </div> <!-- end ./container -->
-    </section> <!-- #showcase -->
-
+    <script>writeShowcase("The Mystery Château");</script>
 
 
     <!-- PAGE SPECIFIC CONTENT HERE -->
-
     <div class="container">
-        <div class="block">
-            <h1>Now Playing</h1>
-        </div> <!-- End of block -->
-
-        <div class="block">
+        <div class="block"> <!-- Now Playing Movies Slide -->
+            <div class="elem"> 
+                <h2>Now Playing</h2>
+            </div>
             <div class='elem'>
-                <div id='slide'>
-                    <img src="images/movie_posters/bitofheaven.jpg" width="400px"/>
+                <div id='slide1'>
+                    <img src="images/movie_posters/poster1.jpg" width="400px" height="600px"/>
                 </div> <!-- End of slide -->
             </div> <!-- End of elem -->
 
+            <div class="dot_container">
+                <script language="javascript">
+                    // Creates dot for every poster in slideshow
+                    t = "";
+                    for (let i = 0; i < movies.length; i++) {
+                        t += "<span class='dot'></span>"
+                    }
+                    document.writeln(t);
+                </script>
+
+                <script language="javascript">
+                    // When dots are cliked, slide show 
+                    // goes to corresponding poster
+                    $('.dot').on('click', function() {
+                        movieIndex = $('.dot').index(this);
+                        $("#slide1 img").attr("src", "images/movie_posters/" + movies[movieIndex]);
+                        slideShow();
+                    });
+                </script>
+            </div>
+
             <div class="elem">
                 <div id="ticket-btn">
-                    <a href="#">Purchase Tickets Now</a>
-                </div> <!-- End of center-btn -->
+                    <a href="tickets.html">Purchase Tickets Now</a>
+                </div> <!-- End of ticket-btn -->
             </div> <!-- End of elem -->
-        </div> <!-- End of block -->
+        </div> <!-- End of block: Now Playing Movie Slides -->
 
-        <div class="block">
+        <div class="block"> <!-- About Us Section -->
             <div class="elem">
                 <h2>About Us</h2>
             </div> <!-- End of elem -->
 
             <div class="elem">
                 <p>
-                    BUSINESS_NAME_HERE is a locally-owned, dine-in movie theater and the only cinema experience you'd ever need. Conveniently located at SOME_CONVENIENT_CROSSING, our theater offers comfortable, spacious, socially-distanced seating, friendly staffs, and delicious food while you enjoy the greatest <span>and</span> the latest movies out there, from Hollywood hits, to the beloved classics, and the new up-and-comers. <br><br>
+                    The Mystery Château is a locally-owned, dine-in movie theater and the only cinema experience you'd ever need. Conveniently located at the center of Park Row, our theater offers comfortable, spacious, socially-distanced seating, friendly staffs, and delicious food while you enjoy the greatest <span>and</span> the latest movies out there, from Hollywood hits, to the beloved classics, and the new up-and-comers. <br><br>
 
-                    You can order before the show starts! A full three course meal not for you? No worries! Stop by our concessions stand and pick up a classic bucket of buttery popcorn and all your favorites! And if you’re in the mood for dessert, an extra drink, or some good old-fashioned kettle corn halfway through the movie, no problem! Our rooms will have friendly wait staff there to assist your table. BUSINESS_NAME_HERE was designed for you to sit back, relax and enjoy the show! <br><br>
+                    You can order before the show starts! A full three course meal not for you? No worries! Stop by our concessions stand and pick up a classic bucket of buttery popcorn and all your favorites! And if you’re in the mood for dessert, an extra drink, or some good old-fashioned kettle corn halfway through the movie, no problem! Our rooms will have friendly wait staff there to assist your table. The Mystery Château was designed for you to sit back, relax and enjoy the show! <br><br>
                     
                     Established in 1984, we started with just three 50-seated screening rooms. Today, we are are proud to house twenty screening and dining halls. In addition to our screening halls, we offer a fully stocked bar and reservations for private screenings. We <span>aren't</span> your average movie theater.
                 </p>
             </div> <!-- End of elem -->
-        </div> <!-- End of block -->
+        </div> <!-- End of block: About Section -->
+
+        <div class="block"> <!-- New Movies list/scroller -->
+            <div class="elem"> 
+                <h2>Films Coming in Summer & Fall</h2>
+            </div> <!-- end of .elem -->
+
+            <div class="new_movies">
+                <div class='scroller'>
+                    <script language="javascript">
+                        newMovies = ["bitofheaven.jpg", "adrift.jpg","blood.jpg", "lovesong.jpg", "thewalk.jpg"];
+                        s = "";
+                        for(let i = 0; i < newMovies.length; i++) {
+                            s += "<img name='new' src='images/movie_posters/";
+                            s += newMovies[i];
+                            s += "'/>";
+                        }
+                        document.writeln(s);
+                    </script>
+                </div> <!-- end of scroller -->
+
+                <!-- L/R arrows -->
+                <span class="new_movie_back">&#10094;</span>
+                <span class="new_movie_next">&#10095;</span>
+            </div> <!-- end of .new_movies -->
+
+            <script>
+                const scroller = document.querySelector('.scroller');
+                let posterWidth = document.querySelector('.scroller img').clientWidth;
+                $('.new_movie_next').on('click', function() {
+                    if(scroller.scrollLeft < 890)   // fix
+                        scroller.scrollBy({left: posterWidth, top: 0, behavior:'smooth'}); 
+                    else
+                        scroller.scrollTo({left: 0, top: 0, behavior:'smooth'}); 
+                });
+
+                $('.new_movie_back').on('click', function() {
+                    if(scroller.scrollLeft != 0)
+                        scroller.scrollBy({left: -posterWidth, top: 0, behavior:'smooth'});
+                    else
+                        scroller.scrollTo({left: scroller.scrollWidth, top: 0, behavior:'smooth'});
+                });
+             </script>
+        </div> <!-- end of .block: New Movies List -->
+
     </div> <!-- End container -->
-
-
 
 
     <!-- Extra space; may remove after content is added -->
     <!-- Helps when we are scroll and just want to look at the page -->
     <div style="margin-top: 150px;"></div>
-    
 
 
     <!-- Page Footer: Copyright and Social media links -->
     <!-- Social Links Currently Go NOWHERE -->
-    <footer id="main-footer">
-        <!-- Left side: address -->
-        <div class="foot-block">
-            <div id="foot-address">
-                <ul>
-                    <li>Street Address</li>
-                    <li>City, State, Zip</li>
-                    <li>Phone</li>
-                </ul>
-            </div> <!-- End of foot-address -->
-        </div> <!-- End of foot-block -->
-
-        <div class="foot-block">
-            <p>Copyright &copy; 2021 BUSINESS_NAME_HERE</p>
-            <ul id="foot-social">
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-clemson-paw-png-703430.png" alt="Instagram"></a></li>
-
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-facebook-circle-png-503771.png" alt="Facebook"></a></li>
-
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-twitter-logo-png-transparent-111779.png" alt="Twitter"></a></li>
-            </ul>
-        </div> <!-- End of foot-block -->
-
-        <!-- Right side: Hours of operation -->
-        <div class="foot-block">
-            <div id="foot-hours">
-                <h4>Hours:</h4>
-                <ul>
-                    <li>Monday: 7 - 7</li>
-                    <li>Tuesday: 7 - 7</li>
-                    <li>Wednesday: 7 - 7</li>
-                    <li>Thursday: 7 - 7</li>
-                    <li>Friday: 7 - 7</li>
-                    <li>Saturday: 7 - 7</li>
-                    <li>Sunday: 7 - 7</li>
-                </ul>
-            </div> <!-- End of foot-hours -->
-        </div> <!-- End of foot-block -->
-    </footer> <!-- #main-footer -->
+    <script>writeFooter();</script>
 </body>
 </html>

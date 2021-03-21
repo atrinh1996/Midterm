@@ -2,8 +2,10 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>MENU</title>
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<title>The Mystery Château | Menu</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/default.css">
+		
 		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,17 +13,11 @@
 			$(document).ready(function(){
 				// Add smooth scrolling to all links
 				$("a").on('click', function(event) {
-					
-					// Make sure this.hash has a value before overriding default behavior
-					if (this.hash !== "") {
-						// Prevent default anchor click behavior
-						event.preventDefault();
-						
 						// Store hash
 						var hash = this.hash;
 						
 						// Using jQuery's animate() method to add smooth page scroll
-						// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+						// 800 milliseconds to scroll
 						$('html, body').animate({
 							scrollTop: $(hash).offset().top
 						}, 800, function(){
@@ -29,46 +25,128 @@
 							// Add hash (#) to URL when done scrolling (default click behavior)
 							window.location.hash = hash;
 						});
-					} // End if
 				});
 			});
+			
 		</script>
+		
+		<style>
+			body, html {
+				height: 100%;
+				
+				/*	font-family: 'Heebo', sans-serif;*/
+				font-family: 'Comfortaa', cursive;
+			}
+			
+			.grape {
+				
+				height: 100%;
+				background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/grape.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				
+			}
+			
+			.text {
+				height: 50px;
+				line-height: 100px;
+				text-align: center;
+				color: white;
+			}
+			
+			.menu2 {
+				font-size: 60px;
+			}
+			
+			.tagline {
+				font-size: 30px;
+			}
+			
+			.main {
+				text-align: center;
+			}
+			
+			.course {
+				font-size: 30px;
+			}
+			
+			hr {
+				width: 100px;
+				height: 3px;
+				background-color: black;
+			}
+			
+			.top-line {
+				width: 0%;
+				height: 0px;
+				background-color: black;
+			}
+			
+			
+			/* ARROW and SCROLL */
+			.arrow {
+				box-sizing: border-box;
+				height: 14px;
+				width: 14px;
+				border-style: solid;
+				border-color: white;
+				border-width: 0px 2px 2px 0px;
+				transform: rotate(45deg);
+			}
+			
+			.arrow:hover {
+				border-bottom-width: 4px;
+				border-right-width: 4px;
+			}
+			
+			.scroll-down {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 50vh;
+			}
+		</style>
+		
+		
 	</head>
 	
 	<body>
 		<!-- Navigation Bar -->
 		<nav id="navbar">
-			<div class="container">
+			<div class="hamb" style="padding-left:40px" for="toggle">&#9776;</div>
+			<input type="checkbox" id="toggle"/>
+			<div class="menu">
 				<!-- Use unordered list for nav bars -->
 				<ul>
 					<li><a href="#">Home</a></li>
-					<li><a href="menu.html">Menu</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="events.html">Events</a></li>
-					<li><a href="#">Item 6</a></li>
-					<li><a href="#">Item 7</a></li>
+					<li><a href="menu.html"><strong>Menu</strong></a></li>
+					<li><a href="movies.html">Movies</a></li> 
+					<li><a href="tickets.html">Tickets</a></li> <!--nested?-->
+					<li><a href="events.html">Room Rental</a></li>
+					<li><a href="covid.html">COVID Safety</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="shop.html">Shop</a></li>
 				</ul>
 			</div> <!-- ./container -->
 		</nav> <!-- #navbar -->
 		
+		
 		<div class = "grape">
 			<div class = "text">
-				<h2 class = "menu">Our Menu</h2>
+				<h2 class = "menu2">Our Menu</h2>
 				<h6 class = "tagline"><em>Please enjoy our array of selections</em></h6>
-				<a href="#scroll" class ="scroll-down">
-					<div class = "mouse">
-						<span></span>
-					</div>
-					
-					<div class = "arrow">
-						<span></span>
-					</div>
-				</a>
+				<div class ="scroll-down">
+					<a href="#scroll" >
+						<div class = "arrow"></div>
+					</a>
+				</div>
+				<hr id ="scroll" class = "top-line">
 			</div>
 		</div>
 		
-		<div id = "scroll" class = "main">
+		
+		<div class = "main">
 			<h3 class = "course">small plates</h3>
 			<hr>
 			<p>Beauty and the Beats - <em>a beat salad with lemon vinaigrette / 9</em></p>
@@ -77,21 +155,25 @@
 			
 			<h3 class = "course">entrees</h3>
 			<hr>
-			<p>First Name - <em>description / price</em></p>
-			<p>Second Name - <em>description / price</em></p>
-			<p>Third Name - <em>description / price</em></p>
+			<p>Shadow of a Dough - <em> margarita pizza with basil garnish / 16</em></p>
+			<p>Sprout of the Past - <em>cheese and herb potato fans / 13</em></p>
+			<p>D.O.A (Daily Caught Albacore) - <em>tuna with a soy ginger glaze / 18</em></p>
 			
 			<h3 class = "course">desserts</h3>
 			<hr>
 			<p>The King's Peach - <em>peach sorbet / 8</em></p>
 			<p>Sweetey Todd: The Delicious Dessert of Fleet Street - <em> ice cream Sunday / 12</em></p>
-			<p>Citizen Cake (Cane) - <em>a chocolate lava cake / 11</em></p>
+			<p>Citizen Cake - <em>a chocolate lava cake / 11</em></p>
 			
-			<h3 class = "course">Drinks & Spirits</h3>
+			<h3 class = "course">drinks & spirits</h3>
 			<hr>
 			<p>Marilyn Merlot - <em>a bottle of Emmolo Merlot, Nappa Valley / 28</em></p>
 			<p>Leonardo De-Cappucino - <em>a cappuccino with cinnamon and nutmeg / 6</em></p>
-			<p>The Chocolate Malt-ese Falcon - <em>a chocolate malt, choice of alcohol or not / 9 or 14</em></p>
+			<p>The Chocolate Malt-ese Falcon - <em>a chocolate malt, choice of alcohol or virgin / 9 or 14</em></p>
+			
+			<h3 class = "course">3 act special</h3>
+			<hr>
+			<p>Choose 1 item from 3 of the 4 sections for a reduced price of $24</p>
 			
 		</div>
 		
@@ -146,10 +228,6 @@
 
 
 <!-- Photo by 
-PLATTER
-Photo by <a href="https://unsplash.com/@borissidlo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Boris Sidlo</a> 
-on <a href="/s/photos/dinner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
 GRAPE
 Photo by <a href="https://unsplash.com/@alelmes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alasdair Elmes</a> on 
 <a href="/s/photos/wine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -161,27 +239,3 @@ on <a href="/s/photos/movie?utm_source=unsplash&utm_medium=referral&utm_content=
 CONTACT
 Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Paweł Czerwiński</a> on
 <a href="/s/photos/contact?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
--->
-<!--<h2 class = "mini-banner">Main</h2>-->
-<!--<div class="row">-->
-<!--	<div class="column">-->
-<!--		<h2 style = "color: #806000">Starters</h2>-->
-<!--		<h4>Data..</h4>-->
-<!--		<p>How does this font look?</p>-->
-<!--		<h4>Data..</h4>-->
-<!--		<p>desription</p>-->
-<!--		<h4>Data..</h4>-->
-<!--		<p>desription</p>-->
-<!--	</div>-->
-<!--	<div class="column">-->
-<!--		<h2 style = "color: #806000">Entrees</h2>-->
-<!--		<h4>Data..</h4>-->
-<!--		<p>Does this look alright? I can't really tell so far</p>-->
-<!--		<h4>Data..</h4>-->
-<!--		<p>desription</p>-->
-<!--		<h4>Data..</h4>-->
-<!--		<p>desription</p>-->
-<!--	</div>-->
-<!--</div>-->
-<!---->

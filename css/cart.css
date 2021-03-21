@@ -89,10 +89,3 @@ td img{     /* "card"-like look */
     /* Make qty option bigger */
     input[name='item-qty']{font-size: 18px;}
 }
-
-/********* View Container Border Colors *************/
-/* #cartView{border: 1px solid blue;} */
-/* #totalView{border: 1px solid green;} */
-/* #order-btn{border: tomato solid 2px;} */
-/* .cntr-input{border: 2px solid purple;} */
-/* h2{border:2px solid orange} */

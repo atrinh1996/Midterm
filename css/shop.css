@@ -48,12 +48,3 @@ input[name='checkout']{
     padding-right: 5px;
     border-radius: 25px;
 }
-
-/******** Border Lines for div contianers *************/
-/* .container{border: 1px solid black;}
-.cert-block{border: 1px solid green;}
-input{border: 1px solid blue;}
-.custom{border: 1px solid hotpink;}
-.elem{border: 1px solid red;}
-#center-prod{border: 1px solid purple;} */
-/******************************************************/

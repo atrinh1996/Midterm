@@ -8,10 +8,14 @@
     <title>The Mystery Château | COVID Safety</title>
 
     <!-- Always have this -->
+    <script language="javascript" src="js/default.js"></script>
     <link rel="stylesheet" type="text/css" href="css/default.css">
-
     <!-- Include page specific CSS / style tag here -->
     <style>
+        ul li:nth-child(6) {
+            font-weight: 900;
+        }
+
         li:not(:last-child) {
             margin-bottom: 5px;
         }
@@ -26,29 +30,10 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav id="navbar">
-        <div class="container">
-            <!-- Use unordered list for nav bars -->
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="movies.html">Movies</a></li>
-                <li><a href="tickets.html">Tickets</a></li> <!--nested?-->
-                <li><a href="#">Room Rental</a></li>
-                <li><a href="covid.html"><strong>COVID Safety</strong></a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#">Shop</a></li>
-            </ul>
-        </div> <!-- ./container -->
-    </nav> <!-- #navbar -->
+<script>writeNav();</script>
 
     <!-- Showcase Section -->
-    <section id="showcase">
-        <div class="container">
-            <a href="https://www.google.com"><img class="logo" src="images/MysteryLogo.png" width= "200" height= "200"></a>
-            <h1>COVID Safety</h1>
-        </div> <!-- end ./container -->
-    </section> <!-- #showcase -->
+<script>writeShowcase("COVID Safety");</script>
 
 
 
@@ -97,48 +82,6 @@
     <div style="margin-top: 150px;"></div>
 
     <!-- Page Footer: Copyright and Social media links -->
-    <!-- Social Links Currently Go NOWHERE -->
-    <footer id="main-footer">
-        <!-- Left side: address -->
-        <div class="foot-block">
-            <div id="foot-address">
-                <ul>
-                    <li>Street Address</li>
-                    <li>City, State, Zip</li>
-                    <li>Phone</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="foot-block">
-        <p>Copyright &copy; 2021 BUSINESS_NAME_HERE</p>
-        <!-- <div class="container"> -->
-            <ul id="foot-social">
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-clemson-paw-png-703430.png" alt="Instagram"></li></a>
-
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-facebook-circle-png-503771.png" alt="Facebook"></li></a>
-
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-twitter-logo-png-transparent-111779.png" alt="Twitter"></li></a>
-            </ul>
-        <!-- </div> end of ./container -->
-        </div>
-
-        <!-- Right side: Hours of operation -->
-        <div class="foot-block">
-            <div id="foot-hours">
-                <h4>Hours:</h4>
-                <ul>
-                    <li>Monday: 7 - 7</li>
-                    <li>Tuesday: 7 - 7</li>
-                    <li>Wednesday: 7 - 7</li>
-                    <li>Thursday: 7 - 7</li>
-                    <li>Friday: 7 - 7</li>
-                    <li>Saturday: 7 - 7</li>
-                    <li>Sunday: 7 - 7</li>
-                </ul>
-            </div>
-        </div>
-
-    </footer> <!-- #main-footer -->
+<script>writeFooter();</script>
 </body>
 </html>

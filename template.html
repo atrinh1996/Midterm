@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Include jQuery if necessary -->
+    
     <title>PAGE_NAME_HERE</title>
 
     <!-- Always have this -->
     <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script language="javascript" src="js/default.js"></script>
 
     <!-- Include page specific CSS / style tag here -->
 
@@ -16,34 +19,16 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav id="navbar">
-        <div class="container">
-            <!-- Use unordered list for nav bars -->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="#">Item 6</a></li>
-                <li><a href="#">Item 7</a></li>
-            </ul>
-        </div> <!-- ./container -->
-    </nav> <!-- #navbar -->
+    <script>writeNav();</script>
 
     <!-- Showcase Section -->
-    <section id="showcase">
-        <div class="container">
-            <h1>BUSINESS_NAME_HERE</h1>
-        </div> <!-- end ./container -->
-    </section> <!-- #showcase -->
-
+    <!-- the string parameter will be in an h1 tag* -->
+    <script>writeShowcase("The Mystery Château");</script>
 
 
     <!-- PAGE SPECIFIC CONTENT HERE -->
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolores autem, ea nobis porro, libero, temporibus et hic dignissimos suscipit nesciunt quasi alias. Possimus iusto consequuntur aliquid quos autem? Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae sint maxime consequatur ea autem commodi ipsam provident nobis perspiciatis nesciunt sequi magnam, aliquid corrupti ex culpa id officiis consequuntur ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptate quasi reprehenderit facilis quisquam eum sit labore voluptas! Perferendis, sunt. Tenetur dolores, vitae ab natus consequatur exercitationem in aliquam culpa.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga asperiores facilis impedit amet, veritatis quaerat possimus eligendi laboriosam quam sit. Praesentium dolor aliquid dolores fugiat, ea perferendis. Eligendi, mollitia! Nulla? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse soluta saepe repellendus modi? Ipsa exercitationem veritatis iste temporibus! Nihil, fuga rerum. Iure eum eos quod vitae quidem laboriosam cupiditate magnam! </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolores autem, ea nobis porro, libero, temporibus et hic dignissimos suscipit nesciunt quasi alias.</p>
     </div><!-- end ./container -->
 
 
@@ -51,48 +36,10 @@
     <!-- Extra space; may remove after content is added -->
     <!-- Helps when we are scroll and just want to look at the page -->
     <div style="margin-top: 150px;"></div>
-    
+
+
     <!-- Page Footer: Copyright and Social media links -->
     <!-- Social Links Currently Go NOWHERE -->
-    <footer id="main-footer">
-        <!-- Left side: address -->
-        <div class="foot-block">
-            <div id="foot-address">
-                <ul>
-                    <li>Street Address</li>
-                    <li>City, State, Zip</li>
-                    <li>Phone</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="foot-block">
-            <p>Copyright &copy; 2021 BUSINESS_NAME_HERE</p>
-            <ul id="foot-social">
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-clemson-paw-png-703430.png" alt="Instagram"></a></li>
-
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-facebook-circle-png-503771.png" alt="Facebook"></a></li>
-
-                <li><a href="#" target="_blank"><img src="images/pngkey.com-twitter-logo-png-transparent-111779.png" alt="Twitter"></a></li>
-            </ul>
-        </div>
-
-        <!-- Right side: Hours of operation -->
-        <div class="foot-block">
-            <div id="foot-hours">
-                <h4>Hours:</h4>
-                <ul>
-                    <li>Monday: 7 - 7</li>
-                    <li>Tuesday: 7 - 7</li>
-                    <li>Wednesday: 7 - 7</li>
-                    <li>Thursday: 7 - 7</li>
-                    <li>Friday: 7 - 7</li>
-                    <li>Saturday: 7 - 7</li>
-                    <li>Sunday: 7 - 7</li>
-                </ul>
-            </div>
-        </div>
-
-    </footer> <!-- #main-footer -->
+    <script>writeFooter();</script>
 </body>
 </html>

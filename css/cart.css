@@ -1,0 +1,91 @@
+/* Styling for cart.html (Desktop) 
+ * see Mobile styling at the end.
+ * Author: Amy Bui
+ */
+
+/* Overall Page format: 2 columns on Desktop */
+form{
+    display: flex;
+    flex-direction: row;
+}
+h2{width: max-content;}
+#cartView{width: 70%;}
+#totalView{width: 30%;}
+input{border-radius:25px; padding-left:5px; font-size: 16px;}
+#totalView{margin-top: 30px;}
+
+
+/* Remove default input textbox styling: appear disabled */
+#card-value, #total-cost, #subtotal, #total, #tax{
+    background-color: inherit;
+    border:none;
+}
+
+/* Style for Place Order Button */
+input[name='order']{
+    font-size: 16px;
+    background-color: inherit;
+    font-weight: bold;
+    border-radius: 25px;
+    border-width: 3px;
+    padding: 10px;
+}
+#order-btn{
+    margin:auto;
+    width: max-content;
+    margin-top: 10px;
+}
+
+
+/* Styling for table that represents cart */
+table {border-collapse: collapse;margin: auto;}
+tr[name='cartHead'] th{padding: 20px;}
+tr[name='cart-item'] td{padding-bottom:20px; padding-top:20px;}
+tr[name='cartHead'] th, tr[name='cart-item'] td{border-bottom: 2px dotted #000;}
+#card-value{width: 40px;}
+#total-cost{width: 75px;}   /* fits max possible value of "1000.00" */
+.cntr-input{width: max-content;margin: auto;}
+td img{     /* "card"-like look */
+    border-radius: 25px;
+    width: 300px; 
+    height: 150px;
+}
+
+/* Optional class styles */
+.required{color: #ff0000; font-weight: bold;}
+.disable{background-color: inherit;border:none;}
+
+
+/* Mobile Styling: One column view */
+@media(max-width:960px) {
+    /* Fix width and spacing */
+    .container{width:100%;}
+    form{display: block;}
+    #cartView, #totalView{width: auto; padding:0;}
+    h2{margin: auto; margin-bottom: 20px;}
+
+    /* Item separation */
+    tr[name='cartHead']{display: none;}
+    tr[name='cart-item'] td{border-bottom:none; padding-bottom: 0; padding-top: 0;}
+    tr[name='cart-item'] td:last-child{border-bottom: 2px dotted #000; padding-bottom: 10px;}
+    tr[name='cart-item'] td:first-child{padding-top: 10px;}
+
+    /* italicize card value */
+    tr[name='cart-item'] td:nth-child(2), tr[name='cart-item'] td:nth-child(2) input{font-style: italic;}
+
+    /* Realign row content */
+    tr[name='cart-item']{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Reshape design display to be a circle */
+    td img{
+        width: 300px;
+        height: 300px;
+        border-radius: 100% 100% 100% 100%;
+    }
+
+    /* Make qty option bigger */
+    input[name='item-qty']{font-size: 18px;}
+}

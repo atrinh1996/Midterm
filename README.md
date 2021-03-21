@@ -16,5 +16,5 @@ Creators:
 
 Acknowledgements
 
-  Images/Art from unsplash.com; Artist: Gwen King, Felix Mooneeram, Keo Oran, Mathias P.R. Reding, Pylz Works, GR Stocks, Denise Jans, Myke Simon
+  Images/Art from unsplash.com; Artist: Gwen King, Felix Mooneeram, Keo Oran, Mathias P.R. Reding, Pylz Works, GR Stocks, Denise Jans, Myke Simon, Christian Lue
 

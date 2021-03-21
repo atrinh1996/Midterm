@@ -3,12 +3,13 @@
  * Spring 2021
  */
 
+ /* Overall Format, and Now Playing Section */
+ #navbar{z-index: 1;} /* adjusted for the extra images */
 .block, .elem{display:flex;flex-direction: column;}
-.block, .elem, h1, #ticket-btn{margin:auto;}
+.block, .elem, .dot_container, #ticket-btn{margin:auto;}
 .block{padding-bottom: 25px;}
-h1{font-size:40px; font-weight: 800;}
-span{font-style: italic;font-weight: normal;}
-#slide{z-index: -1;}
+span{font-style: italic; font-weight: normal;}
+#slide1, #slide2{z-index: -1;}
 #ticket-btn a{text-decoration: none;}
 #ticket-btn a:hover{opacity: 0.5;}
 #ticket-btn{
@@ -19,9 +20,96 @@ span{font-style: italic;font-weight: normal;}
 }
 
 
+/* The dots/bullets/indicators: Now Playing Section */
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
 
-/******** Border Lines for div contianers *************/
-/* .container{border: 1px solid black;}
-.block{border: 1px solid green;}
-.elem{border: 1px solid blue;} */
-/******************************************************/
+.dot:hover{
+    background-color: rgb(70, 70, 70);
+}
+
+
+/* New Movies Section */
+.new_movies{
+    margin: auto;
+    position: relative;
+}
+
+/* Desktop: Horizontal Scrolling: New Movies */
+.scroller{
+    overflow-x: scroll;
+    scrollbar-width:none;
+    display: flex;
+    z-index: -2;
+    max-width: 900px;
+}
+
+.scroller img[name='new']{
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px -2px rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Scroll arrows */
+.new_movie_back, .new_movie_next{
+    position: absolute;
+    top: 50%;
+    margin-top: 25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: rgba(00, 00, 00, 0.7);
+    z-index: 0;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-style: normal;
+}
+
+.new_movie_back:hover, .new_movie_next:hover{
+    background-color: rgba(128, 0, 0, 0.5);
+    cursor: pointer;
+}
+ .new_movie_next{
+    right: 15px;
+}
+.new_movie_back{
+    left: 15px;
+}
+
+/* Mobile Styling */
+@media(max-width: 900px) {
+    .container{width:95%}
+    img[name='new']{padding: 0 30px;}
+    .new_movies{padding: 0;}
+    .new_movie_back, .new_movie_next{display: none;}
+
+    /* Change to vertical scrolling */
+    .scroller{ 
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        flex-direction: column;
+        max-width: auto;
+        max-height: 600px;
+
+        padding:0;
+        margin:0;
+    }
+    .scroller img[name='new']{
+        padding:10px;
+        margin:5px;
+    }
+}

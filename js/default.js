@@ -29,7 +29,7 @@ function writeNav() {
     n += "<li><a href='index.html'>Home</a></li>";
     n += "<li><a href='menu.html'>Menu</a></li>";
     n += "<li><a href='movies.html'>Movies</a></li>";
-    n += "<li><a href='tickets.html'><strong>Tickets</strong></a></li>";
+    n += "<li><a href='tickets.html'>Tickets</a></li>";
     n += "<li><a href='events.html'>Room Rental</a></li>";
     n += "<li><a href='covid.html'>COVID Safety</a></li>";
     n += "<li><a href='contact.html'>Contact</a></li>";

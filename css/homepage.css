@@ -18,7 +18,9 @@ span{font-style: italic; font-weight: normal;}
     border-radius: 25px;
     border: 4px solid #ebdcab;
 }
-
+ul li:nth-child(1){
+    font-weight: 900;
+}
 
 /* The dots/bullets/indicators: Now Playing Section */
 .dot{

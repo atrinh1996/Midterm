@@ -4,6 +4,7 @@
  */
 
  /* Overall Format, and Now Playing Section */
+ #navbar{z-index: 1;} /* adjusted for the extra images */
 .block, .elem{display:flex;flex-direction: column;}
 .block, .elem, .dot_container, #ticket-btn{margin:auto;}
 .block{padding-bottom: 25px;}

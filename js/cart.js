@@ -71,7 +71,8 @@ function validateOrder() {
     if (phoneValid && lnameValid && streetValid && cityValid) {
         alert(`Your order has been submitted. Thank you for your visit!`);
         disableForm();      // Form disables with current input still in place
-        $("h2").html("Your Order");
+        $("h1").html("Your Order");
+        $("h2").html("Order Submitted");
         return true;
     } else {
         return false;

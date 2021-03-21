@@ -68,7 +68,7 @@ span{font-style: italic; font-weight: normal;}
     width: 50px;
     border-radius: 100%;
     background-color: rgba(00, 00, 00, 0.7);
-    z-index: 2;
+    z-index: 0;
     line-height: 60px;
     text-align: center;
     color: white;

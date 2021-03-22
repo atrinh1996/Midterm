@@ -32,7 +32,7 @@
         function nextSlide() {
             movieIndex = (movieIndex + 1) % movies.length;
             $("#slide1 img").attr("src", "images/movie_posters/" + movies[movieIndex]);
-            // $("#slide1 img").fadeIn(3000, slideShow);
+
             slideShow();
         }
     </script>
@@ -133,7 +133,7 @@
                 const scroller = document.querySelector('.scroller');
                 let posterWidth = document.querySelector('.scroller img').clientWidth;
                 $('.new_movie_next').on('click', function() {
-                    if(scroller.scrollLeft < 890)   // fix
+                    if(scroller.scrollLeft < 890)   // fixed
                         scroller.scrollBy({left: posterWidth, top: 0, behavior:'smooth'}); 
                     else
                         scroller.scrollTo({left: 0, top: 0, behavior:'smooth'}); 

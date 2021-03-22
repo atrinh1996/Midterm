@@ -94,6 +94,7 @@ ul li:nth-child(1){
 /* Mobile Styling */
 @media(max-width: 900px) {
     .container{width:95%}
+    #slide1 img{width:300px; height:500px;}
     img[name='new']{padding: 0 30px;}
     .new_movies{padding: 0;}
     .new_movie_back, .new_movie_next{display: none;}

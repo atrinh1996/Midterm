@@ -7,10 +7,9 @@
 .cert-block{border-bottom: 2px #000000 dotted;}
 #page-head{display: flex;}
 h2{margin: auto;}
-ul li:nth-child(8){
+.menu li:nth-child(8){
     font-weight: 900;
 }
-
 
 .cert-block{
     display: inline-flex;

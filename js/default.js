@@ -90,13 +90,13 @@ function writeFooter() {
 
     // Right Side: Hours of Operation
     f += "<div class='foot-block'><div id='foot-hours'><h4>Hours:</h4><ul>";
-    f += "<li>Monday: 7 - 7</li>";
-    f += "<li>Tuesday: 7 - 7</li>";
-    f += "<li>Wednesday: 7 - 7</li>";
-    f += "<li>Thursday: 7 - 7</li>";
-    f += "<li>Friday: 7 - 7</li>";
-    f += "<li>Saturday: 7 - 7</li>";
-    f += "<li>Sunday: 7 - 7</li>";
+    f += "<li>Monday: 9am - 10pm</li>";
+    f += "<li>Tuesday: 9am - 10pm</li>";
+    f += "<li>Wednesday: 9am - 10pm</li>";
+    f += "<li>Thursday: 9am - 10pm</li>";
+    f += "<li>Friday: 9am - 10pm</li>";
+    f += "<li>Saturday: 9am - 10pm</li>";
+    f += "<li>Sunday: 9am - 10pm</li>";
     f += "</ul></div></div>";
 
     // End

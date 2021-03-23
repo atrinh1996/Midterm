@@ -12,18 +12,17 @@
 		
 		<script>
 			$(document).ready(function(){
-				// Add smooth scrolling to all links
+				// Add smooth scrolling to all internal links
 				$("a").on('click', function(event) {
-						// Store hash
+						//this.hash reads the href attribute of this, and gets the part of the URL beginning with #
 						var hash = this.hash;
 						
-						// Using jQuery's animate() method to add smooth page scroll
-						// 800 milliseconds to scroll
+						//animate() method to add smooth page scroll + 800 milliseconds to scroll
 						$('html, body').animate({
 							scrollTop: $(hash).offset().top
 						}, 800, function(){
 							
-							// Add hash (#) to URL when done scrolling (default click behavior)
+							// Shows that scroll button has been clicked in url by adding #scroll
 							window.location.hash = hash;
 						});
 				});
@@ -144,7 +143,7 @@
 			
 			<h3 class = "course">entrees</h3>
 			<hr>
-			<p>Shadow of a Dough - <em> margarita pizza with basil garnish / 16</em></p>
+			<p>Shadow of a Dough - <em> margherita pizza with basil garnish / 16</em></p>
 			<p>Sprout of the Past - <em>cheese and herb potato fans / 13</em></p>
 			<p>D.O.A (Daily Caught Albacore) - <em>tuna with a soy ginger glaze / 18</em></p>
 			

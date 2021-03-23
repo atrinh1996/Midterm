@@ -1,0 +1,232 @@
+<!-- Template html file for Midterm -- Comp20 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mystery Château | Events</title>
+
+    <!-- Always have this -->
+    <script language="javascript" src="js/default.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    
+    <style>        .menu li:nth-child(5) { 
+            font-weight: 900;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0px 10px 0px;
+            box-sizing: border-box;
+        }
+
+        
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        
+        @media screen and (max-width: 1080px) {
+            .column {
+                width: 45%;
+                display: block;
+        
+            }
+            .form {
+                width: 500px;
+                align-content: center;
+            }
+            
+            .h3-title{
+                width: 500px;
+            }
+            
+            .h4-title {
+                width: 500px;
+            }
+        }
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 1000px) {
+            .column {
+                width: 100%;
+                display: block;
+                align-content: center;
+                
+            }
+            .form {
+                width: 500px;
+                align-content: center;
+            }
+            
+            .h3-title{
+                width: 500px;
+            }
+            
+            .h4-title {
+                width: 500px;
+            }
+        }
+        
+        
+        .column-container {
+            box-sizing: border-box;
+            padding-top: 80px;
+            width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .h3-title {
+            font-size: 40px;
+            text-align: center;
+
+        }
+        
+        .h4-title {
+            text-align: center;
+
+        }
+        
+        .button {
+            margin-left: 170px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #660000;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+        
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button:hover span {
+            padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        
+        input[type=text], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        
+        input[type=submit] {
+            background-color: #660000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            float: left;
+        }
+        
+        .reportError {
+            color: #ff1a1a;
+            background-color: #ff1a1a;
+
+        }
+    </style>
+    
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <script>writeNav();</script>
+    
+    <!-- Showcase Section -->
+    <!-- the string parameter will be in an h1 tag* -->
+    <script>writeShowcase("The Mystery Château");</script>
+    
+    
+    <div class = "column-container">
+        <div class="row">
+                <div class="column">
+                    <img src="images/reserve.jpg" width="500">
+                    <h3 class = "h3-title">Reserve</h3>
+                    <h4 class= "h4-title">Please enter your name, contact info, and the event you're trying to schedule. 
+                        We'll get a quote back to you within 24 hours!</h4>
+                    <form class = "form" name = "valForm" action="thanks.html">
+<!--                        <label for="fname">Full Name</label><br>-->
+                        <input type = "text" placeholder = "Full Name (Required)" id = "fname" name = "fname" required><br><br>
+                        
+<!--                        <label for="number">Phone Number</label><br>-->
+                        <input type = "text" placeholder = "Phone Number (Required)"id = "number" name = "number" required><br><br>
+                        
+<!--                        <label for="email">Email</label><br>-->
+                        <input type = "text" placeholder = "Email (Required)" id = "email" name = "email" required><br><br>
+                        
+                        <label for="type">Type of event (for decoration purposes):</label><br>
+                        <select>
+                            <option>Work Party</option>
+                            <option>Birthday Party</option>
+                            <option>Bachelor/Bachelorette Party</option>
+                            <option>Graduation Party</option>
+                            <option>Other (please specify below)</option>
+                        </select><br><br>
+                        
+                        <label for="type">How Many People:</label><br>
+                        <select>
+                            <option>1-10</option>
+                            <option>11-30</option>
+                            <option>31-50</option>
+                            <option>50+</option>
+                        </select><br><br>
+                        
+                        
+                        <label for="request">Specific Instructions</label><br>
+                        <textarea type = "text" placeholder = "Decorations, special dishes..." id = "request" name = "request" style = "height:200px"></textarea><br>
+                        
+                        <input type = "submit" value = "submit" href="thanks.html">
+                        
+                    </form>
+                </div>
+                
+                <div class="column">
+                    <img src="images/contact.jpg" width="500">
+                    <h3 class = "h3-title">Contact</h3>
+                    <h4 class= "h4-title">The button below links to our contact page if you have any additional questions!</h4>
+                    <a href="contact.html"><button class="button" style="vertical-align:middle"><span>Contact Us! </span></button></a>
+                </div>
+        </div>
+    </div>
+
+    <!-- Extra space; may remove after content is added -->
+    <!-- Helps when we are scroll and just want to look at the page -->
+    <div style="margin-top: 150px;"></div>
+    
+    
+    <!-- Page Footer: Copyright and Social media links -->
+    <!-- Social Links Currently Go NOWHERE -->
+    <script>writeFooter();</script>
+</body>
+</html>

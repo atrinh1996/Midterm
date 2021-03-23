@@ -152,6 +152,7 @@
             cursor: pointer;
             float: left;
         }
+        
     </style>
     
 </head>
@@ -162,7 +163,7 @@
     
     <!-- Showcase Section -->
     <!-- the string parameter will be in an h1 tag* -->
-    <script>writeShowcase("Room Rental");</script>
+    <script>writeShowcase("The Mystery Château");</script>
     
     
     <div class = "column-container">
@@ -172,15 +173,13 @@
                     <h3 class = "h3-title">Reserve</h3>
                     <h4 class= "h4-title">Please enter your name, contact info, and the event you're trying to schedule. 
                         We'll get a quote back to you within 24 hours!</h4>
-                    <form class = "form" action="thanks.html">
-<!--                        <label for="fname">Full Name</label><br>-->
-                        <input type = "text" placeholder = "Full Name" id = "fname" name = "fname"><br><br>
+                    <form class = "form" name = "valForm" action="thanks.html">
+                    
+                        <input type = "text" placeholder = "Full Name (Required)" id = "fname" name = "fname" required><br><br>
                         
-<!--                        <label for="number">Phone Number</label><br>-->
-                        <input type = "text" placeholder = "Phone Number"id = "number" name = "number"><br><br>
+                        <input type = "text" placeholder = "Phone Number (Required)"id = "number" name = "number" required><br><br>
                         
-<!--                        <label for="email">Email</label><br>-->
-                        <input type = "text" placeholder = "Email" id = "email" name = "email"><br><br>
+                        <input type = "text" placeholder = "Email (Required)" id = "email" name = "email" required><br><br>
                         
                         <label for="type">Type of event (for decoration purposes):</label><br>
                         <select>
